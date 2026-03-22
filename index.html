@@ -10,33 +10,33 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Microsoft Yahei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #ffffff; /* 纯白色背景 */
+            background-color: #f5f8fa; /* 浅蓝灰背景，适配企业蓝调 */
         }
 
-        /* 导航栏容器 - 缩小尺寸 */
+        /* 导航栏容器 - 深海蓝主色 */
         .navbar {
-            background-color: #252525;
+            background-color: #0f3460; /* 深海蓝主色，企业级沉稳色调 */
             width: 100%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            height: 45px; /* 固定导航栏高度 */
-            line-height: 45px; /* 行高与高度一致，垂直居中 */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            height: 60px;
+            line-height: 60px;
         }
 
         .nav-container {
-            max-width: 100%; /* 全屏宽度 */
+            max-width: 100%;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between; /* 关键：两端对齐 */
+            justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
-            height: 100%; /* 继承导航栏高度 */
+            padding: 0 40px;
+            height: 100%;
         }
 
         /* 菜单容器 - 靠左 */
@@ -46,51 +46,59 @@
             height: 100%;
         }
 
-        /* Lenovo图标样式 - 缩小尺寸，靠右侧 */
+        /* Lenovo图标样式 - 适配深海蓝背景 */
         .lenovo-logo {
-            height: 30px; /* 缩小图标尺寸 */
+            height: 38px;
             padding: 2px 0;
+            filter: brightness(1.1); /* 微调亮度，适配深蓝背景 */
         }
 
-        /* 导航菜单样式 */
+        /* 导航菜单样式 - 企业蓝调风格 */
         .nav-menu {
             display: flex;
             list-style: none;
-            height: 100%; /* 继承高度 */
+            height: 100%;
         }
 
         .nav-item {
             position: relative;
-            margin: 0 12px;
-            height: 100%; /* 继承高度 */
+            margin: 0 18px;
+            height: 100%;
         }
 
         .nav-link {
             display: block;
-            color: #ffffff;
+            color: #ffffff; /* 白色文字 */
             text-decoration: none;
-            padding: 0 12px; /* 只保留左右内边距 */
-            font-size: 14px; /* 缩小字体 */
-            font-weight: 500;
+            padding: 0 15px;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            height: 100%; /* 继承高度 */
+            height: 100%;
+            text-shadow: 0 0 0px transparent; /* 初始无发光 */
         }
 
+        /* 鼠标悬停发亮效果 - 天蓝色发光 */
         .nav-link:hover {
-            color: #00a8ff;
-            background-color: rgba(255, 255, 255, 0.1); /* 悬停背景色 */
+            color: #e6f7ff; /* 浅天蓝文字，提升辨识度 */
+            /* 天蓝色柔光发光效果（企业级柔和质感） */
+            text-shadow: 0 0 8px rgba(144, 202, 249, 0.9), 
+                         0 0 12px rgba(79, 195, 247, 0.6);
+            /* 轻微背景渐变，增强层次感 */
+            background-color: rgba(255, 255, 255, 0.08);
         }
 
-        /* 下拉菜单样式 - 位置微调 */
+        /* 下拉菜单样式 - 企业蓝调风格 */
         .dropdown {
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #ffffff;
-            min-width: 160px; /* 缩小下拉菜单宽度 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 2px;
+            background-color: #ffffff; /* 白色背景，对比清晰 */
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-top: 2px solid #42a5f5; /* 天蓝色高亮边框（企业级强调色） */
             opacity: 0;
             visibility: hidden;
             transform: translateY(5px);
@@ -100,7 +108,7 @@
 
         .dropdown li {
             list-style: none;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #e8f4f8; /* 浅天蓝分隔线 */
         }
 
         .dropdown li:last-child {
@@ -109,17 +117,20 @@
 
         .dropdown-link {
             display: block;
-            color: #333333;
+            color: #263238; /* 深灰文字，保证可读性 */
             text-decoration: none;
-            padding: 8px 12px; /* 缩小子菜单内边距 */
-            font-size: 13px; /* 缩小子菜单字体 */
+            padding: 10px 18px;
+            font-size: 14px;
             transition: all 0.2s ease;
         }
 
+        /* 下拉菜单项悬停 - 天蓝色高亮 */
         .dropdown-link:hover {
-            background-color: #f5f7fa;
-            color: #00a8ff;
-            padding-left: 15px;
+            background-color: #e1f5fe; /* 浅天蓝背景 */
+            color: #0d47a1; /* 深海蓝文字，呼应主色 */
+            padding-left: 20px;
+            /* 下拉项轻微天蓝色发光 */
+            text-shadow: 0 0 4px rgba(66, 165, 245, 0.5);
         }
 
         /* 悬停显示下拉菜单 */
@@ -132,54 +143,56 @@
         /* 响应式适配 */
         @media (max-width: 768px) {
             .navbar {
-                height: auto; /* 移动端恢复自动高度 */
+                height: auto;
                 line-height: normal;
             }
             
             .nav-container {
                 flex-direction: column;
-                padding: 8px;
-                align-items: center; /* 移动端居中显示 */
+                padding: 15px;
+                align-items: center;
             }
 
             .menu-wrapper {
                 width: 100%;
                 justify-content: center;
-                margin-bottom: 5px;
+                margin-bottom: 10px;
             }
 
             .lenovo-logo {
-                margin-bottom: 5px;
+                margin-bottom: 10px;
+                height: 35px;
             }
 
             .nav-menu {
                 flex-direction: column;
                 width: 100%;
-                margin-top: 5px;
+                margin-top: 10px;
             }
 
             .nav-item {
-                margin: 3px 0;
+                margin: 5px 0;
                 text-align: center;
                 height: auto;
             }
 
             .nav-link {
-                padding: 8px 0;
+                padding: 10px 0;
+                text-shadow: none; /* 移动端取消发光，提升可读性 */
             }
 
             .dropdown {
                 position: static;
                 width: 100%;
-                margin-top: 3px;
+                margin-top: 5px;
             }
         }
 
-        /* 页面内容区域 - 清空内容，只保留空白 */
+        /* 页面内容区域 */
         .content {
             width: 100%;
-            min-height: calc(100vh - 45px); /* 占满剩余视口高度 */
-            background-color: #ffffff;
+            min-height: calc(100vh - 60px);
+            background-color: #f5f8fa;
         }
     </style>
 </head>
@@ -198,6 +211,40 @@
                             <li><a href="http://10.176.115.190:15633/" class="dropdown-link" target="_blank">ONE BOARD</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Forecast</a>
+                        <ul class="dropdown">
+                            <li><a href="#" class="dropdown-link">Forecast Item 1</a></li>
+                            <li><a href="#" class="dropdown-link">Forecast Item 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Excution</a>
+                        <ul class="dropdown">
+                            <li><a href="#" class="dropdown-link">Excution Item 1</a></li>
+                            <li><a href="#" class="dropdown-link">Excution Item 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">MRT</a>
+                        <ul class="dropdown">
+                            <li><a href="#" class="dropdown-link">MRT Item 1</a></li>
+                            <li><a href="#" class="dropdown-link">MRT Item 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Lenovo图标（靠右侧） -->
+            <img src="D:\lenovo web/Lenovo-China-logo.png" 
+                 alt="LENOVO" class="lenovo-logo">
+        </div>
+    </nav>
+
+    <!-- 空白内容区域 -->
+    <div class="content"></div>
+</body>
+</html>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Forecast</a>
                         <ul class="dropdown">
