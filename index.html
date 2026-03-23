@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lenovo System Management</title>
+    <title>Lenovo WEB</title>
+    <meta name="referrer" content="no-referrer">
     <style>
         /* 全局样式重置 */
         * {
@@ -14,22 +15,22 @@
         }
 
         body {
-            background-color: #f5f8fa; /* 浅蓝灰背景，适配企业蓝调 */
+            background-color: #beebff; /* 背景 */
         }
 
-        /* 标题栏样式 - 居中显示 */
+        /* 标题栏样式 - 居中 */
         .title-bar {
-            background-color: #ffffff; /* 白色背景，突出标题 */
+            background-color: #220072; /* 背景 */
             width: 100%;
             padding: 12px 40px; /* 上下内边距，左右留白 */
-            border-bottom: 1px solid #e8f4f8; /* 浅天蓝分隔线，呼应导航栏风格 */
-            text-align: center; /* 核心：文字居中 */
+            border-bottom: 1px solid #e8f4f8; /* 浅天蓝分隔线 */
+            text-align: center; /* 文字居中 */
         }
 
         .title-text {
-            /* 蓝到绿渐变色 - 企业级柔和渐变 */
-            background: linear-gradient(90deg, #0f3460 0%, #008080 100%);
-            -webkit-background-clip: text; /* 文字渐变核心属性（webkit内核） */
+            /* 蓝到绿渐变色  */
+            background: linear-gradient(90deg, #85bcff 0%, #24d4d4 100%);
+            -webkit-background-clip: text; /* 文字渐变属性 */
             background-clip: text; /* 标准属性 */
             color: transparent; /* 隐藏原文字颜色，显示渐变 */
             
@@ -41,7 +42,7 @@
 
         /* 导航栏容器 - 深海蓝主色 */
         .navbar {
-            background-color: #0f3460; /* 深海蓝主色，企业级沉稳色调 */
+            background-color: #0f3460; /* 深海蓝主色 */
             width: 100%;
             position: sticky;
             top: 0;
@@ -76,7 +77,7 @@
             filter: brightness(1.1); /* 微调亮度，适配深蓝背景 */
         }
 
-        /* 导航菜单样式 - 企业蓝调风格 */
+        /* 导航菜单样式  */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -85,7 +86,7 @@
 
         .nav-item {
             position: relative;
-            margin: 0 18px;
+            margin: 0 28px;
             height: 100%;
         }
 
@@ -100,20 +101,20 @@
             text-transform: uppercase;
             transition: all 0.3s ease;
             height: 100%;
-            text-shadow: 0 0 0px transparent; /* 初始无发光 */
+            text-shadow: 0 0 0px transparent; 
         }
 
         /* 鼠标悬停发亮效果 - 天蓝色发光 */
         .nav-link:hover {
-            color: #e6f7ff; /* 浅天蓝文字，提升辨识度 */
-            /* 天蓝色柔光发光效果（企业级柔和质感） */
+            color: #e6f7ff; /* 浅天蓝文字 */
+            /* 天蓝色柔光发光效果 */
             text-shadow: 0 0 8px rgba(144, 202, 249, 0.9), 
                          0 0 12px rgba(79, 195, 247, 0.6);
             /* 轻微背景渐变，增强层次感 */
             background-color: rgba(255, 255, 255, 0.08);
         }
 
-        /* 下拉菜单样式 - 企业蓝调风格 */
+        /* 下拉菜单样式 -*/
         .dropdown {
             position: absolute;
             top: 100%;
@@ -121,7 +122,7 @@
             background-color: #ffffff; /* 白色背景，对比清晰 */
             min-width: 180px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border-top: 2px solid #42a5f5; /* 天蓝色高亮边框（企业级强调色） */
+            border-top: 2px solid #42a5f5; /* 天蓝色高亮边框 */
             opacity: 0;
             visibility: hidden;
             transform: translateY(5px);
@@ -140,7 +141,7 @@
 
         .dropdown-link {
             display: block;
-            color: #263238; /* 深灰文字，保证可读性 */
+            color: #263238; /* 深灰文字 */
             text-decoration: none;
             padding: 10px 18px;
             font-size: 14px;
@@ -149,11 +150,11 @@
 
         /* 下拉菜单项悬停 - 天蓝色高亮 */
         .dropdown-link:hover {
-            background-color: #e1f5fe; /* 浅天蓝背景 */
+            background-color: #fcfff0; /* 浅天蓝背景 */
             color: #0d47a1; /* 深海蓝文字，呼应主色 */
             padding-left: 20px;
             /* 下拉项轻微天蓝色发光 */
-            text-shadow: 0 0 4px rgba(66, 165, 245, 0.5);
+            text-shadow: 0 0 4px rgba(23, 7, 255, 0.5);
         }
 
         /* 悬停显示下拉菜单 */
@@ -165,7 +166,7 @@
 
         /* 响应式适配 */
         @media (max-width: 768px) {
-            /* 移动端标题栏适配（已默认居中，仅调整尺寸） */
+
             .title-bar {
                 padding: 10px 15px;
             }
@@ -210,13 +211,18 @@
 
             .nav-link {
                 padding: 10px 0;
-                text-shadow: none; /* 移动端取消发光，提升可读性 */
+                text-shadow: none;
             }
 
             .dropdown {
                 position: static;
                 width: 100%;
                 margin-top: 5px;
+            }
+            
+            /* 移动端隐藏装饰元素 */
+            .carousel-decoration {
+                display: none;
             }
         }
 
@@ -226,10 +232,149 @@
             min-height: calc(100vh - 60px - 46px); /* 减去标题栏高度（46px）+ 导航栏高度（60px） */
             background-color: #f5f8fa;
         }
+    
+        /* 轮播整体容器 - 包含轮播图和装饰元素 */
+        .carousel-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            max-width: 1200px;
+        }
+        
+        /* 轮播图左右装饰元素 */
+        .carousel-decoration {
+            width: 150px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px 0;
+        }
+        
+        /* 装饰图标样式 */
+        .decor-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0f3460 0%, #42a5f5 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(15, 52, 96, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .decor-icon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(15, 52, 96, 0.3);
+        }
+        
+        /* 装饰线条 */
+        .decor-line {
+            width: 2px;
+            height: 120px;
+            background: linear-gradient(to bottom, #42a5f5, #0f3460);
+            border-radius: 1px;
+        }
+        
+        /* 装饰文字 */
+        .decor-text {
+            color: #0f3460;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            padding: 0 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    
+        /* 轮播容器样式 */
+        .carousel-container {
+            position: relative;
+            width: 800px;  /* 轮播图宽度 */
+            height: 500px; /* 轮播图高度 */
+            overflow: hidden; /* 隐藏超出容器的图片 */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* 图片列表容器（用于左移切换） */
+        .carousel-images {
+            display: flex;  /* 横向排列图片 */
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease; /* 平滑切换动画 */
+        }
+
+        /* 图片样式 */
+        .carousel-img {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0; /* 防止图片被压缩 */
+            object-fit: cover; /* 保持图片比例 */
+        }
+
+        /* 左右切换按钮 */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        /* 底部圆点指示器（用于选择指定图片） */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .indicator-dot.active {
+            background-color: white; /* 选中的圆点高亮 */
+        }
     </style>
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- 标题栏（居中） -->
+    <!-- 标题栏 -->
     <div class="title-bar">
         <h1 class="title-text">NB China Site Buyer </h1>
     </div>
@@ -237,46 +382,168 @@
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- 菜单容器（靠左） -->
+            <!-- 菜单 -->
             <div class="menu-wrapper">
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">System</a>
-                        <!-- System下拉菜单 -->
+                        <a href="http://10.176.115.190:15633/" class="nav-link" target="_blank" rel="noopener noreferrer">One board</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Performance</a>
                         <ul class="dropdown">
-                            <li><a href="#" class="dropdown-link">ASN</a></li>
-                            <li><a href="http://10.176.115.190:15633/" class="dropdown-link" target="_blank">ONE BOARD</a></li>
+                            <li><a href="#" class="dropdown-link">Business KPI</a></li>
+                            <li><a href="#" class="dropdown-link">Individual KPI</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Forecast</a>
+                        <a href="#" class="nav-link">Workflow</a>
                         <ul class="dropdown">
-                            <li><a href="#" class="dropdown-link">Forecast Item 1</a></li>
-                            <li><a href="#" class="dropdown-link">Forecast Item 2</a></li>
+                            <li><a href="#" class="dropdown-link">Demo PO</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Excution</a>
+                        <a href="#" class="nav-link">others</a>
                         <ul class="dropdown">
-                            <li><a href="#" class="dropdown-link">Excution Item 1</a></li>
-                            <li><a href="#" class="dropdown-link">Excution Item 2</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">MRT</a>
-                        <ul class="dropdown">
-                            <li><a href="#" class="dropdown-link">MRT Item 1</a></li>
-                            <li><a href="#" class="dropdown-link">MRT Item 2</a></li>
+                            <li><a href="#" class="dropdown-link">BMS</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
             
-            <!-- Lenovo图标（靠右侧） -->
-            <img src="D:\lenovo web\Lenovo-China-logo.png" 
+            <!-- Lenovo图标 -->
+            <img src="images/Lenovo-China-logo.png" 
                  alt="LENOVO" class="lenovo-logo">
         </div>
-    </nav>
+    </nav> <!-- 修复缺失的闭合标签 -->
+
+    <!-- 轮播整体容器（包含装饰和轮播图） -->
+    <div class="carousel-wrapper">
+        <!-- 左侧装饰 -->
+        <div class="carousel-decoration left-decoration">
+            <div class="decor-icon"><i class="fas fa-laptop"></i></div>
+            <div class="decor-line"></div>
+            <div class="decor-text">Quality<br>Assurance</div>
+            <div class="decor-line"></div>
+            <div class="decor-icon"><i class="fas fa-chart-line"></i></div>
+        </div>
+
+        <!-- 轮播容器 -->
+        <div class="carousel-container">
+            <!-- 图片列表 -->
+            <div class="carousel-images">
+                <img src="images/联想welcome.jpg" alt="图片1" class="carousel-img">
+                <img src="images/联想深圳1.jpg" alt="图片2" class="carousel-img">
+                <img src="images/联想深圳2.jpg" alt="图片3" class="carousel-img">
+                <img src="images/联想深圳3.jpg" alt="图片4" class="carousel-img">
+                <img src="images/联想深圳4.jpg" alt="图片5" class="carousel-img">
+                <img src="images/联想深圳5.jpg" alt="图片6" class="carousel-img">
+            </div>
+
+            <!-- 左右切换按钮 -->
+            <button class="carousel-btn prev-btn">&lt;</button>
+            <button class="carousel-btn next-btn">&gt;</button>
+
+            <!-- 底部圆点指示器 -->
+            <div class="carousel-indicators">
+                <span class="indicator-dot active" data-index="0"></span>
+                <span class="indicator-dot" data-index="1"></span>
+                <span class="indicator-dot" data-index="2"></span>
+                <span class="indicator-dot" data-index="3"></span>
+                <span class="indicator-dot" data-index="4"></span>
+                <span class="indicator-dot" data-index="5"></span>
+            </div>
+        </div>
+
+        <!-- 右侧装饰 -->
+
+        <div class="carousel-decoration right-decoration">
+            <div class="decor-icon"><i class="fas fa-cogs"></i></div>
+            <div class="decor-line"></div>
+            <div class="decor-text">Efficiency<br>Excellence</div>
+            <div class="decor-line"></div>
+            <div class="decor-icon"><i class="fas fa-globe-asia"></i></div>
+        </div>
+    </div>
+
+    <script>
+        // 获取DOM元素
+        const carouselImages = document.querySelector('.carousel-images');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const indicatorDots = document.querySelectorAll('.indicator-dot');
+        const imgCount = carouselImages.children.length; // 图片总数
+        let currentIndex = 0; // 当前显示的图片索引
+        let autoPlayTimer; // 自动播放计时器
+
+        // 切换图片的核心函数
+        function switchImage(index) {
+            // 计算需要左移的距离（实现从左到右切换效果）
+            carouselImages.style.transform = `translateX(-${index * 100}%)`;
+            
+            // 更新当前索引
+            currentIndex = index;
+            
+            // 更新圆点指示器的选中状态
+            indicatorDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        // 下一张图片
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % imgCount; // 循环切换
+            switchImage(currentIndex);
+        }
+
+        // 上一张图片
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + imgCount) % imgCount; // 循环切换
+            switchImage(currentIndex);
+        }
+
+        // 自动播放函数
+        function startAutoPlay() {
+            autoPlayTimer = setInterval(nextImage, 6000); // 每6秒切换一次
+        }
+
+        // 停止自动播放
+        function stopAutoPlay() {
+            clearInterval(autoPlayTimer);
+        }
+
+        // 绑定事件
+        // 下一张按钮
+        nextBtn.addEventListener('click', () => {
+            stopAutoPlay(); // 手动操作时停止自动播放
+            nextImage();
+            startAutoPlay(); // 重新开始自动播放
+        });
+
+        // 上一张按钮
+        prevBtn.addEventListener('click', () => {
+            stopAutoPlay();
+            prevImage();
+            startAutoPlay();
+        });
+
+        // 圆点指示器点击事件（切换到指定图片）
+        indicatorDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                stopAutoPlay();
+                const targetIndex = parseInt(dot.dataset.index);
+                switchImage(targetIndex);
+                startAutoPlay();
+            });
+        });
+
+        // 鼠标悬停时停止自动播放，离开后恢复
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+
+        // 初始化自动播放
+        startAutoPlay();
+    </script>
 
     <!-- 空白内容区域 -->
     <div class="content"></div>
